@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "types": ["@llqqntuno/liteloader-types"]
+  }
+}

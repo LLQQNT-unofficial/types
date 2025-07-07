@@ -1,0 +1,23 @@
+{
+  "name": "@llqqntuno/liteloader-types",
+  "version": "1.2.2",
+  "description": "The unofficial TypeScript definitions of LiteLoaderQQNT",
+  "author": "llqqntuno",
+  "contributors": [
+    {"name": "晚梦", "url": "https://about.latedream.cn"}
+  ],
+  "license": "MIT",
+  "optionalDependencies": {
+    "liteloader-qqnt": "~1.2.2",
+    "llqqnt-unofficial": "~1.2.3+uno.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LLQQNT-unofficial/types.git",
+    "directory": "LiteLoaderQQNT"
+  },
+  "types": "index.d.ts",
+  "exports": {
+    "./jsconfig": "./jsconfig.json"
+  }
+}
