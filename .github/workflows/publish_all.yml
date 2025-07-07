@@ -1,0 +1,36 @@
+name: Publish All
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          registry-url: "https://registry.npmjs.org/"
+
+      - name: Publish each package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          for dir in */; do
+            if [ -f "$dir/package.json" ]; then
+              echo "📦 Publishing $dir"
+              cd "$dir"
+              npm install
+              npm publish || echo "⚠️ Failed to publish $dir"
+              cd ..
+            else
+              echo "❌ Skipping $dir (no package.json)"
+            fi
+          done
