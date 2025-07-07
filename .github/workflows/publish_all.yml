@@ -28,7 +28,7 @@ jobs:
               echo "📦 Publishing $dir"
               cd "$dir"
               npm install
-              npm publish || echo "⚠️ Failed to publish $dir"
+              npm publish --access public || echo "⚠️ Failed to publish $dir"
               cd ..
             else
               echo "❌ Skipping $dir (no package.json)"
